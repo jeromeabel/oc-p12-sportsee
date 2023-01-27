@@ -6,6 +6,8 @@
 ## Contexte
 Projet n°12 de la formation de développeur d'applications JS/React niveau 6 d'OpenClassrooms.
 
+- [Kanban](https://github.com/users/jeromeabel/projects/3)
+
 ## Démo
 
 
