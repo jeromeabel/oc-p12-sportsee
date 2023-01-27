@@ -1,19 +1,25 @@
-[![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
+[![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
 
-# oc-p12-sportsee
-> Développez un tableau de bord analytics avec React
+# oc-p12-sportsee 👋
+Project n°12 from the OpenClassrooms Front-End learning path
 
-## Contexte
-Projet n°12 de la formation de développeur d'applications JS/React niveau 6 d'OpenClassrooms.
+> Develop a dashboard analytics with React
 
-- [Kanban](https://github.com/users/jeromeabel/projects/3)
+## ✨ Demo
+- ...
 
-## Démo
+## Requirements
+- ...
+
+## Installation
+- ...
+
+## Usage
+- ...
 
 
-## Auteur
-
-👤 **Jérôme Abel**
+## 👤 Author
+Jérôme Abel
 * Website: http://jeromeabel.net
 * Github: [@jeromeabel](https://github.com/jeromeabel)
 
