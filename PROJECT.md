@@ -1,23 +1,23 @@
 # PROJECT
 
-? Scratch : react
-? Vite / Create React App
-
-
 ## Context
-- I'm a web developper from the SportSee startup, which propose a sport coaching app
+
+- I'm a web developper at the SportSee startup, we build a sport coaching app
 - My goal is to develop a new version of the user's profile page with React technology
 
 ## Guidelines
+
 - React + PropTypes
-- Add Graphihcs with Recharts or D3 lib
+- Add Graphics with Recharts or D3 lib
 - No responsive layout, just Desktop with clear lisibility for 1024x780px screens
-- API : start with dat mocking
-- API : creata a data modelling class
+- API : start with data mocking
+- API : create a data modelling class
 - API : install backend
 - API : calls with fetch or axios in a specific way
 - Documentation : english, README (installation, requirements, usage), comment functions and methods
 
 ## Tasks
+
 - [x] Create the [Kanban](https://github.com/users/jeromeabel/projects/3) board with USer Stories from the TODO status to implement
-- [ ] Interface HTML / CSS
+- [x] Create a react template App with vite : yarn create vite . --template react
+- [ ] Intégration de la page profil HTML / CSS
