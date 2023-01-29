@@ -18,6 +18,7 @@
 
 ## Tasks
 
-- [x] Create the [Kanban](https://github.com/users/jeromeabel/projects/3) board with USer Stories from the TODO status to implement
+- [x] Create the [Kanban](https://github.com/users/jeromeabel/projects/3) board with User Stories from the TODO status to implement
 - [x] Create a react template App with vite : yarn create vite . --template react
-- [ ] Intégration de la page profil HTML / CSS
+- [x] Intégration de la page "Profil" HTML / CSS
+- [ ] User Storie #3 : 1024x780px

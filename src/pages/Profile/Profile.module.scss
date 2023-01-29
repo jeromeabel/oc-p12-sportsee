@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.header {
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  &__name {
+    color: red;
+  }
+
+  p {
+    margin-top: 20px;
+    font-weight: 400;
+  }
+}
+
+.body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+
+  &__left {
+    border-radius: 25px;
+    background-color: #f7f7f7;
+    flex: 3;
+  }
+
+  &__right {
+    border-radius: 25px;
+    background-color: #f7f7f7;
+    flex: 1;
+  }
+}
