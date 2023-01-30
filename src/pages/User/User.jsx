@@ -32,13 +32,11 @@ export default function User() {
 
           <div className={styles.body}>
             <section className={styles.body__left}>
-              <div>ACTIVITY</div>
-              <div>
+              <div className={styles.body__activity}>ACTIVITY</div>
+              <div className={styles.body__bottom}>
                 <div>SESSION</div>
                 <div>PERFORMANCE</div>
-                <div>
-                  <Score value={userData.score || userData.todayScore} />
-                </div>
+                <Score value={userData.score || userData.todayScore} />
               </div>
             </section>
             <section className={styles.body__right}>
