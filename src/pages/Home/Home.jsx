@@ -21,19 +21,14 @@ export default function Home() {
           ...
         </p>
         <p>
-          Pour tester le site. Essayez ces liens :
-          <ul>
-            <li>
-              <Link class="active" to="/user/12">
-                /user/12
-              </Link>
-            </li>
-            <li>
-              <Link class="active" to="/user/18">
-                /user/18
-              </Link>
-            </li>
-          </ul>
+          Pour tester le site :
+          <Link className="active" to="/user/12">
+            /user/12
+          </Link>
+          ou
+          <Link className="active" to="/user/18">
+            /user/18
+          </Link>
         </p>
       </div>
     </section>

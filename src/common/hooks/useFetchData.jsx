@@ -17,13 +17,9 @@ export const useFetchData = (url) => {
         setLoading(false);
       }
     };
+
     fetchData();
   }, [url]);
 
   return { data, loading, error };
 };
-
-export const useFetchLocationById = (url, id) => {
-  const { data, loading, error } = useFetchData(url);
-  const locationData = data.find((item) => item.id === id);
-  return { locationData, loading, error };
