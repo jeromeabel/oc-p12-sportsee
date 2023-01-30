@@ -1,16 +1,16 @@
-import { useFetchData } from '../../common/hooks/useFetchData';
+import { useFetchData } from '../../hooks/useFetchData';
 
 import { useParams } from 'react-router';
 
-import Loader from '../../common/Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 import styles from './User.module.scss';
 
 export default function User() {
   const params = useParams();
   const dataURL = `http://localhost:3000/user/${params.id}`;
   const { data, error, loading } = useFetchData(dataURL);
-  const userData = data.data;
-
+  let userData;
+  if (!loading) userData = data.data;
   if (!loading && !error) console.log('USER DATA : ', userData);
 
   return (
@@ -20,7 +20,7 @@ export default function User() {
         <>
           <div className={styles.header}>
             <h1>
-              Bonjour
+              Bonjour{' '}
               <span className={styles.header__name}>
                 {userData.userInfos.firstName}
               </span>
