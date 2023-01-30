@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  padding: 3em 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.header {
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  &__name {
+    color: red;
+    margin-left: 0.3em;
+  }
+
+  p {
+    margin-top: 20px;
+    font-weight: 400;
+  }
+}
+
+.body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 3em;
+
+  &__left {
+    border-radius: 25px;
+    background-color: #f7f7f7;
+    flex: 3;
+  }
+
+  &__right {
+    border-radius: 25px;
+    background-color: #f7f7f7;
+    flex: 1;
+  }
+}
