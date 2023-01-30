@@ -1,0 +1,27 @@
+.container {
+  background-color: #fbfbfb;
+  display: flex;
+  padding: 32px;
+  align-items: center;
+  border-radius: 5px;
+  gap: 32px;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5px;
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+    color: #74798c;
+  }
+}

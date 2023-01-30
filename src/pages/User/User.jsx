@@ -4,6 +4,8 @@ import { useParams } from 'react-router';
 
 import Loader from '../../components/Loader/Loader';
 import styles from './User.module.scss';
+import Score from '../../components/Score/Score';
+import KeyData from '../../components/KeyData/KeyData';
 
 export default function User() {
   const params = useParams();
@@ -29,8 +31,19 @@ export default function User() {
           </div>
 
           <div className={styles.body}>
-            <section className={styles.body__left}></section>
-            <section className={styles.body__right}></section>
+            <section className={styles.body__left}>
+              <div>ACTIVITY</div>
+              <div>
+                <div>SESSION</div>
+                <div>PERFORMANCE</div>
+                <div>
+                  <Score value={userData.score || userData.todayScore} />
+                </div>
+              </div>
+            </section>
+            <section className={styles.body__right}>
+              <KeyData data={userData.keyData} />
+            </section>
           </div>
         </>
       )}

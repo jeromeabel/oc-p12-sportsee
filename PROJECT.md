@@ -1,5 +1,9 @@
 # PROJECT
 
+## Questions
+
+- todayScore || score ?
+
 ## Context
 
 - I'm a web developper at the SportSee startup, we build a sport coaching app
