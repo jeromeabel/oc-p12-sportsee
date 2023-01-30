@@ -1,0 +1,40 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  position: relative;
+
+  p {
+    position: absolute;
+    top: calc(50% - 18px);
+    animation: loader-fade 2s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    content: '';
+    width: 200px;
+    height: 200px;
+    border: 10px solid var(--color-grey);
+    border-top: 10px solid var(--color-primary);
+    border-radius: 50%;
+    animation: loader-rotate 2s ease infinite;
+  }
+}
+
+@keyframes loader-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loader-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
