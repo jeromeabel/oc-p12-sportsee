@@ -1,11 +1,19 @@
-import { useFetchData } from '../../hooks/useFetchData';
-
 import { useParams } from 'react-router';
 
+import { useFetchData } from '../../hooks/useFetchData';
 import Loader from '../../components/Loader/Loader';
-import styles from './User.module.scss';
 import Score from '../../components/Score/Score';
 import KeyData from '../../components/KeyData/KeyData';
+import Sessions from '../../components/Sessions/Sessions';
+import Activity from '../../components/Activity/Activity';
+import Performance from '../../components/Performance/Performance';
+
+/*
+<Activity /> /user/:id/activity
+<Sessions />  /user/:id/average-sessions
+<Performance />  /user/:id/performance*/
+
+import styles from './User.module.scss';
 
 export default function User() {
   const params = useParams();
@@ -13,7 +21,6 @@ export default function User() {
   const { data, error, loading } = useFetchData(dataURL);
   let userData;
   if (!loading) userData = data.data;
-  if (!loading && !error) console.log('USER DATA : ', userData);
 
   return (
     <section className={styles.container}>
@@ -32,10 +39,16 @@ export default function User() {
 
           <div className={styles.body}>
             <section className={styles.body__left}>
-              <div className={styles.body__activity}>ACTIVITY</div>
+              <div className={styles.body__activity}>
+                <Activity id={params.id} />
+              </div>
               <div className={styles.body__bottom}>
-                <div>SESSION</div>
-                <div>PERFORMANCE</div>
+                <div>
+                  <Sessions id={params.id} />
+                </div>
+                <div>
+                  <Performance id={params.id} />
+                </div>
                 <Score value={userData.score || userData.todayScore} />
               </div>
             </section>

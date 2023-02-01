@@ -3,6 +3,7 @@
 ## Questions
 
 - todayScore || score ?
+- Complétions d'objectifs ? Score Moyen ?
 
 ## Context
 

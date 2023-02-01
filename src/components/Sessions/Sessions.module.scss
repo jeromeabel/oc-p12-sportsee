@@ -1,0 +1,39 @@
+.container {
+  font-size: 15px;
+  background: var(--color-primary);
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  min-width: 250px;
+  min-height: 250px;
+  // padding: 16px;
+
+  position: relative;
+
+  &__title {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 15px;
+    color: white;
+    width: 70%;
+    opacity: 0.7;
+  }
+}
+
+.chart {
+  &__tooltip {
+    padding: 7px;
+    background-color: white;
+    font-size: 10px;
+  }
+  &__text {
+    width: min-content;
+    fill: 'green';
+  }
+}
+
+.axis {
+  // font: normal normal 900 9px/12px Avenir; // font name
+  //letter-spacing: -0.29px;
+}
