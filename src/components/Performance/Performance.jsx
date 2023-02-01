@@ -24,7 +24,7 @@ const Performance = ({ id }) => {
           <RadarChart data={perfData} outerRadius="80%">
             <PolarGrid stroke="white" radialLines={false} />
             <PolarAngleAxis
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 12, lineHeight: 20 }}
               tickLine={false}
               stroke="white"
               dataKey="kind"
