@@ -20,15 +20,11 @@ const Sessions = ({ id }) => {
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
   return (
-    <section className={styles.container}>
-      <div className={styles.container__title}>Durée moyenne des sessions</div>
+    <section className={styles.chart}>
+      <div className={styles.chart__title}>Durée moyenne des sessions</div>
       {loading && !error && <Loader />}
       {!loading && !error && (
-        <ResponsiveContainer
-          width="100%"
-          height="100%"
-          className={styles.chart}
-        >
+        <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={sessionsData}
             margin={{ top: 30, right: 5, left: 5, bottom: 5 }}
