@@ -8,6 +8,14 @@
   align-items: center;
   min-width: 500px;
   min-height: 300px;
+  padding: 20px;
+  position: relative;
+  &__title {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #20253a;
+  }
 
   &__tooltip {
     padding: 10px;
@@ -15,5 +23,48 @@
     color: white;
     font-size: 10px;
     line-height: 24px;
+    transform: translateX(20px);
+  }
+
+  &__legend {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 2em;
+    font-size: 14px;
+    color: #74798c;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    // font-size: 3vw;
+
+    // li:before {
+    //   content: '';
+    //   line-height: 1em;
+    //   width: 0.5em;
+    //   height: 0.5em;
+    //   background-color: red;
+    //   float: left;
+    //   margin: 0.25em 0.25em 0;
+    //   border-radius: 50%;
+    // }
+
+    // & li::before {
+    //   content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    //   font-size: 18px;
+    //   color: red; /* Change the color */
+    //   font-weight: bold; /* If you want it to be bold */
+    //   display: inline-block; /* Needed to add space between the bullet and the text */
+    //   width: 1em; /* Also needed for space (tweak if needed) */
+    //   margin-left: -1em; /* Also needed for space (tweak if needed) */
+    // }
+
+    // & li {
+    //   list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAE0lEQVQIW2NkYGD4D8RwwEi6AACaVAQBULo4sgAAAABJRU5ErkJggg==');
+    // }
   }
 }

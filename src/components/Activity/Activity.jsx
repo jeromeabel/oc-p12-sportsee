@@ -1,7 +1,6 @@
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -44,24 +43,34 @@ const Activity = ({ id }) => {
 
   return (
     <section className={styles.chart}>
+      <div className={styles.chart__title}>Activité quotidienne</div>
       {loading && !error && <Loader />}
       {!loading && !error && (
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            margin={{ top: 30, bottom: 30, left: 30, right: 30 }}
             data={data2}
             barSize={7}
             barGap={8}
+            // margin={{ top: 30, bottom: 30, left: 30, right: 30 }}
           >
             <XAxis dataKey="dayF" tickLine={false} stroke="#9B9EAC" dy={7} />
             <Tooltip
               content={<CustomTooltip />}
               wrapperStyle={{ outline: 'none' }}
+              cursor={{ opacity: 0.5, background: '#C4C4C480' }}
             />
-            <Legend verticalAlign="top" align="right" dy={30} fontSize={14} />
+            <Legend
+              content={renderLegend}
+              verticalAlign="top"
+              align="right"
+              height={50}
+            />
             <CartesianGrid vertical={false} strokeDasharray="4" />
+            <YAxis yAxisId="left" hide={true} />
+
             <YAxis
-              dataKey="kilogram"
+              yAxisId="right"
+              // dataKey="kilogram"
               orientation="right"
               stroke="#9B9EAC"
               tickLine={false}
@@ -75,6 +84,7 @@ const Activity = ({ id }) => {
               interval={0}
             />
             <Bar
+              yAxisId="right"
               name="Poids (kg)"
               dataKey="kilogram"
               fill="#282D30"
@@ -82,8 +92,8 @@ const Activity = ({ id }) => {
               radius={[3, 3, 0, 0]}
             />
             <Bar
+              yAxisId="left"
               name="Calories brûlées (kCal)"
-              strokeLinejoin="round"
               dataKey="calories"
               fill="#E60000"
               legendType="circle"
@@ -93,6 +103,21 @@ const Activity = ({ id }) => {
         </ResponsiveContainer>
       )}
     </section>
+  );
+};
+
+const renderLegend = (props) => {
+  const { payload } = props;
+
+  return (
+    <ul className={styles.chart__legend}>
+      {payload.map((entry, index) => (
+        <li key={`item-${index}`}>
+          <span style={{ color: payload[index].color }}>⚫</span>
+          {entry.value}
+        </li>
+      ))}
+    </ul>
   );
 };
 export default Activity;
