@@ -7,14 +7,18 @@ import logoSVG from '/logo.svg';
 export default function Header() {
   const navMenu = [
     { name: 'Accueil', link: '/' },
-    { name: 'Profil', link: '/user' },
+    { name: 'Profil', link: '/profile' },
     { name: 'Réglages', link: '/settings' },
     { name: 'Communauté', link: '/communauty' },
   ];
   return (
     <header className={styles.header}>
       <Link to="/">
-        <img className={styles.header__logo} src={logoSVG} alt="SprtSee logo" />
+        <img
+          className={styles.header__logo}
+          src={logoSVG}
+          alt="SportSee logo"
+        />
       </Link>
       <nav className={styles.nav}>
         <ul className={styles.nav__ul}>

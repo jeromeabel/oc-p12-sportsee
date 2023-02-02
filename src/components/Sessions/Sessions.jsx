@@ -7,13 +7,13 @@ import {
   ResponsiveContainer,
   Rectangle,
 } from 'recharts';
-import { useFetchData } from '../../hooks/useFetchData';
+// import { useFetchData } from '../../services/api/useFetchData';
 import Loader from '../../components/Loader/Loader';
 import styles from './Sessions.module.scss';
 
 const Sessions = ({ id }) => {
-  const dataURL = `http://localhost:3000/user/${id}/average-sessions`;
-  const { data, error, loading } = useFetchData(dataURL);
+  // const dataURL = `http://localhost:3000/user/${id}/average-sessions`;
+  // const { data, error, loading } = useFetchData(dataURL);
   let sessionsData;
   if (!loading) sessionsData = data.data.sessions;
 

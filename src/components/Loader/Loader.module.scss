@@ -1,19 +1,28 @@
 .loader {
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-  position: relative;
+  display: grid;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
 
   p {
     position: absolute;
-    top: calc(50% - 18px);
+    left: calc(50% - 60px);
+    top: calc(50% - 9px);
     animation: loader-fade 2s ease-in-out infinite alternate;
   }
 
   &::after {
+    position: absolute;
     content: '';
     width: 200px;
     height: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
     border: 10px solid var(--color-grey);
     border-top: 10px solid var(--color-primary);
     border-radius: 50%;

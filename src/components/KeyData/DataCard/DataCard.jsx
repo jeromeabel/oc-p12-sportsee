@@ -3,7 +3,7 @@ import styles from './DataCard.module.scss';
 const DataCard = ({ title, value, icon }) => {
   let unity = 'g';
   if (value >= 1000) {
-    value = `${value / 1000}`;
+    value = Number(`${value / 1000}`).toLocaleString('fr-FR');
     title === 'Calories' ? (unity = 'kCal') : (unity = 'Kg');
   }
 

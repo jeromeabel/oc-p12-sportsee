@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-import { useFetchData } from '../../hooks/useFetchData';
+// import { useFetchData } from '../../services/api/useFetchData';
 import Loader from '../../components/Loader/Loader';
 import styles from './Activity.module.scss';
 
@@ -24,8 +24,8 @@ const data2 = [
 ];
 
 const Activity = ({ id }) => {
-  const dataURL = `http://localhost:3000/user/${id}/activity`;
-  const { data, error, loading } = useFetchData(dataURL);
+  // const dataURL = `http://localhost:3000/user/${id}/activity`;
+  // const { data, error, loading } = useFetchData(dataURL);
   let activityData;
   if (!loading) activityData = data.data.sessions;
   // if (!loading && !error) console.log(JSON.stringify(activityData));
