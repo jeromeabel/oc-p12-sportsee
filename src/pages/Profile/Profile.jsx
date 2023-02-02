@@ -2,6 +2,8 @@ import { useParams } from 'react-router';
 
 import useApi from '../../services/api/useApi';
 
+import User from '../../services/models/User';
+
 import Loader from '../../components/Loader/Loader';
 import Score from '../../components/Score/Score';
 import KeyData from '../../components/KeyData/KeyData';
@@ -11,66 +13,45 @@ import Performance from '../../components/Performance/Performance';
 
 import styles from './Profile.module.scss';
 
-class User {
-  constructor(data) {
-    this.name = data.user.userInfos.firstName;
-    this.score = data.user.score || data.user.todayScore;
-    this.keyData = data.user.keyData;
-
-    this.performance = data.performance.data.map((item) => {
-      return { value: item.value, kind: data.performance.kind[item.kind] };
-    });
-
-    /*
-    0
-: 
-{value: 80, kind: 'cardio'} = Intensité
-1
-: 
-{value: 120, kind: 'energy'} = Vitesse
-2
-: 
-{value: 140, kind: 'endurance'} = Force
-3
-: 
-{value: 50, kind: 'strength'} = Endurance
-4
-: 
-{value: 200, kind: 'speed'} = Énergie
-5
-: 
-{value: 90, kind: 'intensity'} = Cardio*/
-  }
-}
-
 export default function Profile() {
   const userId = useParams().id;
   const { data, error, loading } = useApi(userId);
   let user;
-  if (!loading && data) {
+  if (!loading) {
     user = new User(data);
-    console.log(data.sessions);
   }
 
   return (
     <section className={styles.container}>
       {loading && <Loader />}
-      {!loading && !error && (
+      {!loading && (
         <>
-          Profile
           <div className={styles.header}>
             <h1>
               Bonjour <span className={styles.header__name}>{user.name}</span>
+              <span
+                style={{
+                  marginLeft: '30px',
+                  padding: '5px',
+                  borderRadius: '5px',
+                  border: '1px solid #ddd',
+                  fontSize: '15px',
+                  fontWeight: '300',
+                  opacity: '0.5',
+                }}
+              >
+                {error ? `Mock - ${error}` : 'API'}
+              </span>
             </h1>
             <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
           </div>
           <div className={styles.body}>
             <section className={styles.body__left}>
               <div className={styles.body__activity}>
-                {/* <Activity id={params.id} /> */}
+                <Activity data={user.activity} />
               </div>
               <div className={styles.body__bottom}>
-                {/* <Sessions id={params.id} /> */}
+                <Sessions data={user.sessions} />
                 <Performance data={user.performance} />
                 <Score value={user.score} />
               </div>

@@ -26,14 +26,14 @@
   display: flex;
   width: 100%;
   height: 100%;
-  gap: 3em;
+  gap: 2em;
   justify-content: space-between;
 
   &__left {
     flex: 3;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 2em;
   }
 
   &__right {
@@ -47,6 +47,6 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
-    flex: 1;
+    gap: 2em;
   }
 }
