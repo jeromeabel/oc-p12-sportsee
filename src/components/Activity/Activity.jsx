@@ -72,7 +72,7 @@ const Activity = ({ data }) => {
             dataKey="kilogram"
             fill="#282D30"
             legendType="circle"
-            radius={[3, 3, 0, 0]}
+            radius={[6, 6, 0, 0]}
           />
           <Bar
             yAxisId="left"
@@ -80,7 +80,7 @@ const Activity = ({ data }) => {
             dataKey="calories"
             fill="#E60000"
             legendType="circle"
-            radius={[3, 3, 0, 0]}
+            radius={[6, 6, 0, 0]}
           />
         </BarChart>
       </ResponsiveContainer>
