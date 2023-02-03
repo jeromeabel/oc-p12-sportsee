@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import DataCard from './DataCard/DataCard';
 import styles from './KeyData.module.scss';
 
@@ -22,6 +24,15 @@ const KeyData = ({ data }) => {
       <DataCard title="Lipides" value={data.lipidCount} icon="data-fat" />
     </div>
   );
+};
+
+KeyData.propTypes = {
+  data: PropTypes.shape({
+    calorieCount: PropTypes.number.isRequired,
+    proteinCount: PropTypes.number.isRequired,
+    carbohydrateCount: PropTypes.number.isRequired,
+    lipidCount: PropTypes.number.isRequired,
+  }),
 };
 
 export default KeyData;

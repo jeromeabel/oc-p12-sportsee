@@ -3,7 +3,7 @@
 .error404 {
   display: flex;
   flex-direction: column;
-  justify-content: space-center;
+  justify-content: center;
   align-items: center;
   text-align: center;
   flex-grow: 1;
@@ -14,7 +14,7 @@
 
   h2 {
     font-weight: 500;
-    font-size: var(--font-xl);
+    font-size: var(--font-l);
   }
 
   a {

@@ -12,7 +12,7 @@ function useApi(userId) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await sleep(800);
+        await sleep(500);
         const userData = await fetchApi(userUrl);
         setData(userData);
       } catch (error) {

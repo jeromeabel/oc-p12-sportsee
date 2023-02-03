@@ -18,6 +18,7 @@ class User {
       };
     });
   }
+
   formatSessions(data) {
     const dayLettersFR = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 

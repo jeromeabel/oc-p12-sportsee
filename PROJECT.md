@@ -1,10 +1,5 @@
 # PROJECT
 
-## Questions
-
-- todayScore || score ?
-- Complétions d'objectifs ? Score Moyen ?
-
 ## Context
 
 - I'm a web developper at the SportSee startup, we build a sport coaching app

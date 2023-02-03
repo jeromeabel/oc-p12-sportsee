@@ -5,6 +5,8 @@ import {
   Radar,
   ResponsiveContainer,
 } from 'recharts';
+
+import PropTypes from 'prop-types';
 import styles from './Performance.module.scss';
 
 const Performance = ({ data }) => {
@@ -25,6 +27,15 @@ const Performance = ({ data }) => {
       </ResponsiveContainer>
     </section>
   );
+};
+
+Performance.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      kind: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default Performance;

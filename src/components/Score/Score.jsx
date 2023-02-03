@@ -1,6 +1,8 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 import styles from './Score.module.scss';
 
+import PropTypes from 'prop-types';
+
 const Score = ({ value }) => {
   const data = [{ score: value }];
   const startAngle = 90;
@@ -44,6 +46,10 @@ const Score = ({ value }) => {
       </div>
     </div>
   );
+};
+
+Score.propTypes = {
+  value: PropTypes.number.isRequired,
 };
 
 export default Score;

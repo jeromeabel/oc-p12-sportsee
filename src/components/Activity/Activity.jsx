@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
+import PropTypes from 'prop-types';
+
 import styles from './Activity.module.scss';
 
 const Activity = ({ data }) => {
@@ -51,7 +53,7 @@ const Activity = ({ data }) => {
 
           <YAxis
             yAxisId="right"
-            // dataKey="kilogram"
+            dataKey="kilogram"
             orientation="right"
             stroke="#9B9EAC"
             tickLine={false}
@@ -84,6 +86,15 @@ const Activity = ({ data }) => {
       </ResponsiveContainer>
     </section>
   );
+};
+
+Activity.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 const renderLegend = (props) => {

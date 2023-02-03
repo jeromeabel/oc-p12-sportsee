@@ -1,7 +1,6 @@
 import { useParams } from 'react-router';
 
 import useApi from '../../services/api/useApi';
-
 import User from '../../services/models/User';
 
 import Loader from '../../components/Loader/Loader';

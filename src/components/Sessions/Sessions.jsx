@@ -7,6 +7,9 @@ import {
   ResponsiveContainer,
   Rectangle,
 } from 'recharts';
+
+import PropTypes from 'prop-types';
+
 import styles from './Sessions.module.scss';
 
 const Sessions = ({ data }) => {
@@ -57,6 +60,15 @@ const Sessions = ({ data }) => {
       </ResponsiveContainer>
     </section>
   );
+};
+
+Sessions.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default Sessions;

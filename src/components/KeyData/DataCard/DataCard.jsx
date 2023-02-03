@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './DataCard.module.scss';
 
 const DataCard = ({ title, value, icon }) => {
@@ -18,6 +20,12 @@ const DataCard = ({ title, value, icon }) => {
       </div>
     </div>
   );
+};
+
+DataCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  icon: PropTypes.string.isRequired,
 };
 
 export default DataCard;
