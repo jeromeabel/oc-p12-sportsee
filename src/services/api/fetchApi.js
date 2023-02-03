@@ -11,6 +11,12 @@ async function fetchApi(userUrl) {
   const performance = await axios
     .get(userUrl + '/performance')
     .then((res) => res.data.data);
+
+  // const user = await fetch(userUrl)
+  //   .then((res) => res.json())
+  //   .then((data) => data.data)
+  //   .catch((err) => console.log('error fetch manual'));
+
   return { user, activity, sessions, performance };
 }
 

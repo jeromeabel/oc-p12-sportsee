@@ -1,64 +1,53 @@
 .container {
-  font-size: 15px;
   background: #fbfbfb;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
-  padding: 16px;
-  display: grid;
-  align-items: center;
+  // padding: 1em;
+  flex: 1;
 }
 
-.chart {
-  min-width: 220px;
-  min-height: 220px;
-  display: grid;
-  align-items: center;
-  position: relative;
+// display: grid;
+// flex: 1;
+// align-items: center;
 
+.chart {
+  position: relative;
+  height: 100%;
+
+  &__shape {
+    min-width: 160px;
+    min-height: 160px;
+  }
   h2 {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2em;
+    left: 2em;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 1em;
   }
 
   &__legend {
-    z-index: 3;
+    z-index: 2;
     position: absolute;
     left: 50%;
     top: 50%;
+    translate: -50% -50%;
     text-align: center;
 
-    translate: -50% -50%;
     h3 {
-      font-size: 26px;
-      line-height: 30px;
+      font-size: 2em;
+      line-height: 1.3em;
     }
 
     p {
+      font-size: 1.1em;
+      line-height: 1.8em;
       color: #888;
       font-weight: 500;
-      line-height: 22px;
-    }
-  }
-
-  &__shape {
-    position: relative;
-    z-index: 2;
-
-    &::before {
-      z-index: -1;
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      text-align: center;
-      translate: -50% -50%;
-      width: 78%;
-      height: 78%;
-      background-color: #fff;
-      border-radius: 50%;
     }
   }
 }
+
+// display: grid;
+// align-items: center;
+// min-width: 260px;
+//min-height: 260px;

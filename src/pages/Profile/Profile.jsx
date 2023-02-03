@@ -18,6 +18,7 @@ export default function Profile() {
   let user;
   if (!loading) {
     user = new User(data);
+    console.log(data.activity);
   }
 
   return (
@@ -28,27 +29,17 @@ export default function Profile() {
           <div className={styles.header}>
             <h1>
               Bonjour <span className={styles.header__name}>{user.name}</span>
-              <span
-                style={{
-                  marginLeft: '30px',
-                  padding: '5px',
-                  borderRadius: '5px',
-                  border: '1px solid #ddd',
-                  fontSize: '15px',
-                  fontWeight: '300',
-                  opacity: '0.5',
-                }}
-              >
-                {error ? `Mock - ${error}` : 'API'}
-              </span>
             </h1>
-            <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
+            <p>Félicitations ! Vous avez explosé vos objectifs hier 👏. </p>
+            <div className={styles.header__infos}>
+              {error ? `🛈 Mock` : `✅ API`}
+            </div>
           </div>
           <div className={styles.body}>
             <section className={styles.body__left}>
-              <div className={styles.body__activity}>
-                <Activity data={user.activity} />
-              </div>
+              {/* <div className={styles.body__activity}> */}
+              <Activity data={user.activity} />
+              {/* </div> */}
               <div className={styles.body__bottom}>
                 <Sessions data={user.sessions} />
                 <Performance data={user.performance} />

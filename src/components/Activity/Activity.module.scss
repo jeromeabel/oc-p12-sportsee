@@ -2,14 +2,16 @@
   font-size: 15px;
   background: #fbfbfb;
   color: #74798c;
-  height: 320px;
+
   border-radius: 5px;
-  display: grid;
-  align-items: center;
-  min-width: 500px;
-  min-height: 300px;
+  // display: grid;
+  // align-items: center;
+  flex: 2;
+  // min-width: 500px;
+  min-height: 320px;
   padding: 20px;
   position: relative;
+
   &__title {
     position: absolute;
     top: 30px;

@@ -1,7 +1,5 @@
 .nav {
   width: 90px;
-  padding: 1.5em;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +30,7 @@
   }
 
   &__text {
-    font-size: var(--font-s);
+    font-size: var(--font-xs);
     transform: rotate(-90deg);
     width: max-content;
   }

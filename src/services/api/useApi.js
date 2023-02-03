@@ -18,7 +18,7 @@ function useApi(userId) {
       } catch (error) {
         error instanceof Error && setError(error.message);
         console.log('⚠️ Fetch error : ', error.message);
-        setData(mockApi());
+        setData(mockApi(userId));
       } finally {
         setLoading(false);
       }
