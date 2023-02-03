@@ -40,3 +40,30 @@
     flex: 1;
   }
 }
+
+.avatars {
+  padding: 5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+
+  &__link {
+    padding: 2em;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    h2 {
+      padding-top: 1em;
+    }
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    img {
+      width: 300px;
+    }
+  }
+}
