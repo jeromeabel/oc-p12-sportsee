@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import fetchApi from './fetchApi';
 import mockApi from './mockApi';
 
+function sleep(ms = 1000) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function useApi(userId) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -12,7 +16,7 @@ function useApi(userId) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await sleep(1000);
+        await sleep(2000); // Simulate waiting times
         const userData = await fetchApi(userUrl);
         setData(userData);
       } catch (error) {
@@ -28,10 +32,6 @@ function useApi(userId) {
   }, [userId]);
 
   return { data, loading, error };
-}
-
-function sleep(ms = 1000) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default useApi;

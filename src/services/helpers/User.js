@@ -1,12 +1,3 @@
-// modèle de donnée
-// formatage ?
-// Raw Data > formatage > (User Data > Charts)
-
-// ...
-
-// Données d'un utilisateur = contexte VS functional independance
-// module
-// { name, score, keyData, performance, sessions, activity }
 class User {
   constructor(data) {
     this.name = data.user.userInfos.firstName;
@@ -21,10 +12,8 @@ class User {
   formatActivity(data) {
     return data.map((item) => {
       return {
-        ...item,
+        ...item, // kilogram & calories
         day: new Date(item.day).getDate(),
-        // kilogram: item.kilogram,
-        // calories: item.calories,
       };
     });
   }

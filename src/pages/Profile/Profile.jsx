@@ -1,7 +1,7 @@
 import { useParams } from 'react-router';
 
 import useApi from '../../services/api/useApi';
-import User from '../../services/models/User';
+import User from '../../services/helpers/User';
 
 import Loader from '../../components/Loader/Loader';
 import Score from '../../components/Score/Score';
@@ -18,7 +18,7 @@ export default function Profile() {
   let user;
   if (!loading) {
     user = new User(data);
-    console.log(data.activity);
+    console.log(data.sessions);
   }
 
   return (
