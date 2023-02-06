@@ -22,3 +22,12 @@
 - [x] Create a react template App with vite : yarn create vite . --template react
 - [x] Intégration de la page "Profil" HTML / CSS
 - [x] User Story #3 : 1024x780px
+- [x] All User Stories
+- [x] Add Mock/Fetch API automatic selection
+- [x] Add two buttons in the Home page
+
+## Docs
+
+- https://github.com/shri/JSDoc-Style-Guide
+- yarn add jsdoc -D, yarn add better-docs -D
+- package.json scripts : "docs": "jsdoc -c jsdoc.conf.json"

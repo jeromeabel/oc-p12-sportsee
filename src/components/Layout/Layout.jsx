@@ -5,7 +5,13 @@ import NavVertical from './NavVertical/NavVertical';
 
 import styles from './Layout.module.scss';
 
-export default function Layout() {
+/**
+ * Render the shared Layout between all the pages.
+ * It is the main container of components.
+ * It displays Navigation Header and Vertical.
+ */
+
+function Layout() {
   return (
     <div className={styles.layout}>
       <Header />
@@ -16,3 +22,5 @@ export default function Layout() {
     </div>
   );
 }
+
+export default Layout;

@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import DataCard from './DataCard/DataCard';
 import styles from './KeyData.module.scss';
 
+/**
+ * Render the key data into a list of cards, where the title are french.
+ *
+ * @param { Object } data Data container for the four nutritions data
+ * @param { Integer } data.calorieCount The value of calories
+ * @param { Integer } data.proteinCount The value of proteins
+ * @param { Integer } data.carbohydrateCount The value of glucids
+ * @param { Integer } data.lipidCount The value of lipids
+ */
+
 const KeyData = ({ data }) => {
   return (
     <div className={styles.container}>

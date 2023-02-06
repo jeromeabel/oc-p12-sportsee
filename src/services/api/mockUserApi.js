@@ -1,6 +1,18 @@
 import mockedData from './mock/data';
 
-export default function mockApi(id = 12) {
+/**
+ *
+ * Get user's data from a file
+ *
+ * @param { Integer } userId Identification number of the user
+ * @returns { Object.user<Object>} User informations and nutritions data
+ * @returns { Object.activity<Object>} Kilogram and calories day by day
+ * @returns { Object.sessions<Object>} Session lenghts day by day
+ * @returns { Object.performance<Object>} Values of six kind of performance
+ *
+ */
+
+const mockUserApi = (id = 12) => {
   const userId = parseInt(id);
 
   const user = mockedData.USER_MAIN_DATA.filter(
@@ -19,4 +31,6 @@ export default function mockApi(id = 12) {
   console.log('🛈 Using Mocked Data');
 
   return { user, activity, sessions, performance };
-}
+};
+
+export default mockUserApi;

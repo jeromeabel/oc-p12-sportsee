@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Activity/Activity.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Activity/Activity.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+
+import PropTypes from 'prop-types';
+
+import styles from './Activity.module.scss';
+
+/**
+ * Render the activity details of the user into a BarChart
+ *
+ * @param { Array.&lt;{ day: Integer, kilogram: Integer, calories: Integer }> } data
+ */
+
+const Activity = ({ data }) => {
+  /**
+   * Render a customized legend for the Barchart
+   *
+   * @param { Array } payload The source data of the content to be displayed in the legend
+   */
+  const CustomLegend = ({ payload }) => {
+    return (
+      &lt;ul className={styles.chart__legend}>
+        {payload.map((entry, index) => (
+          &lt;li key={`item-${index}`}>
+            &lt;span style={{ color: payload[index].color }}>⚫&lt;/span>
+            {entry.value}
+          &lt;/li>
+        ))}
+      &lt;/ul>
+    );
+  };
+
+  /**
+   * Render a customized tooltip for the Barchart
+   *
+   * @param { Array } payload The source data of the content to be displayed in the legend
+   */
+  const CustomTooltip = ({ active, payload }) => {
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
+      return (
+        &lt;div className={styles.chart__tooltip}>
+          &lt;p>{`${payload[0].value}kg`} &lt;/p>
+          &lt;p>{`${payload[1].value}kcal`}&lt;/p>
+        &lt;/div>
+      );
+    }
+  };
+
+  return (
+    &lt;section className={styles.chart}>
+      &lt;div className={styles.chart__title}>Activité quotidienne&lt;/div>
+
+      &lt;ResponsiveContainer width="100%" height="100%">
+        &lt;BarChart data={data} barSize={7} barGap={8}>
+          &lt;XAxis dataKey="day" tickLine={false} stroke="#9B9EAC" dy={7} />
+          &lt;Tooltip
+            content={&lt;CustomTooltip />}
+            wrapperStyle={{ outline: 'none' }}
+            cursor={{ opacity: 0.5, background: '#C4C4C480' }}
+          />
+          &lt;Legend
+            content={&lt;CustomLegend />}
+            verticalAlign="top"
+            align="right"
+            height={50}
+          />
+          &lt;CartesianGrid vertical={false} strokeDasharray="4" />
+          &lt;YAxis yAxisId="left" hide={true} />
+          &lt;YAxis
+            yAxisId="right"
+            dataKey="kilogram"
+            orientation="right"
+            stroke="#9B9EAC"
+            tickLine={false}
+            axisLine={false}
+            dx={30}
+            type="number"
+            domain={([dataMin, dataMax]) => {
+              return [Math.abs(dataMin) - 1, Math.abs(dataMax) + 1];
+            }}
+            allowDecimals={false}
+            interval={0}
+          />
+          &lt;Bar
+            yAxisId="right"
+            name="Poids (kg)"
+            dataKey="kilogram"
+            fill="#282D30"
+            legendType="circle"
+            radius={[6, 6, 0, 0]}
+          />
+          &lt;Bar
+            yAxisId="left"
+            name="Calories brûlées (kCal)"
+            dataKey="calories"
+            fill="#E60000"
+            legendType="circle"
+            radius={[6, 6, 0, 0]}
+          />
+        &lt;/BarChart>
+      &lt;/ResponsiveContainer>
+    &lt;/section>
+  );
+};
+
+Activity.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    })
+  ),
+};
+
+export default Activity;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Activity">Activity</a></li><li><a href="global.html#AppRouter">AppRouter</a></li><li><a href="global.html#DataCard">DataCard</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#KeyData">KeyData</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Performance">Performance</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#Score">Score</a></li><li><a href="global.html#Sessions">Sessions</a></li><li><a href="global.html#fetchUserApi">fetchUserApi</a></li><li><a href="global.html#mockUserApi">mockUserApi</a></li><li><a href="global.html#useUserApi">useUserApi</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Feb 06 2023 16:43:18 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

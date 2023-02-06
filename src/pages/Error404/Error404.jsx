@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 
-//import { useSetTitle } from 'common/hooks/setTitle';
-
 import styles from './Error404.module.scss';
 
-export default function Error404() {
-  //useSetTitle('Erreur 404');
+/**
+ *
+ * Display this error page when the URL is not provided
+ *
+ */
+
+function Error404() {
   return (
     <div className={styles.error404}>
       <h1>404</h1>
@@ -14,3 +17,5 @@ export default function Error404() {
     </div>
   );
 }
+
+export default Error404;

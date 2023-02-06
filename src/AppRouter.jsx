@@ -5,17 +5,21 @@ import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 import Error404 from './pages/Error404/Error404';
 
+/**
+ * Handle the routing and error page.
+ * Only the "/" and "/profile/:id" URI are working
+ */
+
 const AppRouter = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      // { path: 'error404', element: <Error404 /> },
       {
         path: 'profile/:id',
         element: <Profile />,
-        // errorElement: <Error404 />,
+        errorElement: <Error404 />,
       },
       { path: '*', element: <Error404 /> },
     ],

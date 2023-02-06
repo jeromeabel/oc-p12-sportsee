@@ -13,12 +13,41 @@ import PropTypes from 'prop-types';
 
 import styles from './Activity.module.scss';
 
+/**
+ * Render the activity details of the user into a BarChart
+ *
+ * @param { Array.<{ day: Integer, kilogram: Integer, calories: Integer }> } data
+ */
+
 const Activity = ({ data }) => {
-  const CustomTooltip = ({ active, payload, label }) => {
+  /**
+   * Render a customized legend for the Barchart
+   *
+   * @param { Array } payload The source data of the content to be displayed in the legend
+   */
+  const CustomLegend = ({ payload }) => {
+    return (
+      <ul className={styles.chart__legend}>
+        {payload.map((entry, index) => (
+          <li key={`item-${index}`}>
+            <span style={{ color: payload[index].color }}>⚫</span>
+            {entry.value}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  /**
+   * Render a customized tooltip for the Barchart
+   *
+   * @param { Array } payload The source data of the content to be displayed in the legend
+   */
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div className={styles.chart__tooltip}>
-          <p>{`${payload[0].value}kg`}</p>
+          <p>{`${payload[0].value}kg`} </p>
           <p>{`${payload[1].value}kcal`}</p>
         </div>
       );
@@ -30,12 +59,7 @@ const Activity = ({ data }) => {
       <div className={styles.chart__title}>Activité quotidienne</div>
 
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          barSize={7}
-          barGap={8}
-          // margin={{ top: 30, bottom: 30, left: 30, right: 30 }}
-        >
+        <BarChart data={data} barSize={7} barGap={8}>
           <XAxis dataKey="day" tickLine={false} stroke="#9B9EAC" dy={7} />
           <Tooltip
             content={<CustomTooltip />}
@@ -43,14 +67,13 @@ const Activity = ({ data }) => {
             cursor={{ opacity: 0.5, background: '#C4C4C480' }}
           />
           <Legend
-            content={renderLegend}
+            content={<CustomLegend />}
             verticalAlign="top"
             align="right"
             height={50}
           />
           <CartesianGrid vertical={false} strokeDasharray="4" />
           <YAxis yAxisId="left" hide={true} />
-
           <YAxis
             yAxisId="right"
             dataKey="kilogram"
@@ -91,24 +114,11 @@ const Activity = ({ data }) => {
 Activity.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
+      day: PropTypes.number.isRequired,
       kilogram: PropTypes.number.isRequired,
       calories: PropTypes.number.isRequired,
     })
   ),
 };
 
-const renderLegend = (props) => {
-  const { payload } = props;
-
-  return (
-    <ul className={styles.chart__legend}>
-      {payload.map((entry, index) => (
-        <li key={`item-${index}`}>
-          <span style={{ color: payload[index].color }}>⚫</span>
-          {entry.value}
-        </li>
-      ))}
-    </ul>
-  );
-};
 export default Activity;

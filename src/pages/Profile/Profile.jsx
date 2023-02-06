@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 
-import useApi from '../../services/api/useApi';
+import useUserApi from '../../services/api/useUserApi';
 import User from '../../services/helpers/User';
 
 import Loader from '../../components/Loader/Loader';
@@ -12,13 +12,24 @@ import Performance from '../../components/Performance/Performance';
 
 import styles from './Profile.module.scss';
 
-export default function Profile() {
+/**
+ *
+ * The Profile page is a React Component.
+ * It is the main part of the application.
+ * It takes data from the API or a mocked file when the path is "profile/:id"
+ *
+ *
+ * It renders all the dashboard components : Score, KeyData, Sessions, Activity and Performance
+ *
+ */
+
+function Profile() {
+  // Get user's data
   const userId = useParams().id;
-  const { data, error, loading } = useApi(userId);
+  const { data, error, loading } = useUserApi(userId);
   let user;
   if (!loading) {
     user = new User(data);
-    console.log(data.sessions);
   }
 
   return (
@@ -28,7 +39,8 @@ export default function Profile() {
         <>
           <div className={styles.header}>
             <h1>
-              Bonjour <span className={styles.header__name}>{user.name}</span>
+              Bonjour{' '}
+              <span className={styles.header__name}>{user.firstName}</span>
             </h1>
             <p>Félicitations ! Vous avez explosé vos objectifs hier 👏. </p>
             <div className={styles.header__infos}>
@@ -37,9 +49,7 @@ export default function Profile() {
           </div>
           <div className={styles.body}>
             <section className={styles.body__left}>
-              {/* <div className={styles.body__activity}> */}
               <Activity data={user.activity} />
-              {/* </div> */}
               <div className={styles.body__bottom}>
                 <Sessions data={user.sessions} />
                 <Performance data={user.performance} />
@@ -55,3 +65,5 @@ export default function Profile() {
     </section>
   );
 }
+
+export default Profile;

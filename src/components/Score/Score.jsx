@@ -3,8 +3,14 @@ import styles from './Score.module.scss';
 
 import PropTypes from 'prop-types';
 
+/**
+ * Render the score value into a RadialBarChart
+ *
+ * @param { Number } value The value of the score [0-1]
+ */
+
 const Score = ({ value }) => {
-  // Compute angle from the props.value
+  // Compute angles
   const data = [{ score: value }];
   const startAngle = 90;
   const endAngle = startAngle + value * -360;
@@ -22,11 +28,7 @@ const Score = ({ value }) => {
           </p>
         </div>
 
-        <ResponsiveContainer
-          // width="100%"
-          // height="100%"
-          className={styles.chart__shape}
-        >
+        <ResponsiveContainer className={styles.chart__shape}>
           <RadialBarChart
             innerRadius="85"
             outerRadius="100"
