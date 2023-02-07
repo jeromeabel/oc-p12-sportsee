@@ -24,8 +24,8 @@ function useUserApi(userId) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Wait 1.2 seconds to simulate api calls
-        await sleep(1200);
+        // Wait 0.5 seconds to simulate api calls
+        await sleep(500);
 
         const userData = await fetchUserApi(userUrl);
         setData(userData);
