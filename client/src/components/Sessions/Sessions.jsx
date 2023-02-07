@@ -35,7 +35,6 @@ const Sessions = ({ data }) => {
    * */
 
   const CustomCursor = ({ y, width, height, points }) => {
-    console.log(points);
     return (
       <Rectangle
         fill="black"

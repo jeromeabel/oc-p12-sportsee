@@ -8,7 +8,7 @@ export default function NavVertical() {
         {navIcons.map((icon, index) => (
           <li key={index} className={styles.nav__icon}>
             <a href="#">
-              <img src={`/${icon}.svg`} alt={`Icône ${icon}`} />
+              <img src={`${icon}.svg`} alt={`Icône ${icon}`} />
             </a>
           </li>
         ))}
