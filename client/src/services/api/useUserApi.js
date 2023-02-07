@@ -18,7 +18,8 @@ function useUserApi(userId) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const userUrl = new URL(userId, 'http://localhost:3000/user/');
+  // const userUrl = new URL(userId, 'http://localhost:3000/user/');
+  const userUrl = new URL(userId, 'https://sportsee.onrender.com/user/');
 
   useEffect(() => {
     const fetchData = async () => {
