@@ -21,7 +21,7 @@ const DataCard = ({ title, value, icon }) => {
 
   return (
     <div className={styles.container}>
-      <img src={`/${icon}.svg`} alt={title} />
+      <img src={`/oc-p12-sportsee/${icon}.svg`} alt={title} />
       <div className={styles.heading}>
         <h3>
           {value} {unity}
