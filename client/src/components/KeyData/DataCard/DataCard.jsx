@@ -7,7 +7,7 @@ import styles from './DataCard.module.scss';
  *
  * @param { String } title Title of the card
  * @param { Integer } value The value of the card
- * @param { String } icon The name of the svg icon file withou located in /public
+ * @param { String } icon The file name of the svg icon located in /public
  */
 
 const DataCard = ({ title, value, icon }) => {
