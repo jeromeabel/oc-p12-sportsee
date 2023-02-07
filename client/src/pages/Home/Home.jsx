@@ -20,11 +20,11 @@ function Home() {
 
         <div className={styles.avatars}>
           <Link to="/profile/18" className={styles.avatars__link}>
-            <img src="/user18.svg" alt="User 18 avatar" />
+            <img src="/oc-p12-sportsee/user18.svg" alt="User 18 avatar" />
             <h2>Cécilia</h2>
           </Link>
           <Link to="/profile/12" className={styles.avatars__link}>
-            <img src="/user12.svg" alt="User 12 avatar" />
+            <img src="/oc-p12-sportsee/user12.svg" alt="User 12 avatar" />
             <h2>Karl</h2>
           </Link>
         </div>
