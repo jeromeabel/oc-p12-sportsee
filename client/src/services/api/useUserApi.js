@@ -18,14 +18,15 @@ function useUserApi(userId) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // const userUrl = new URL(userId, 'http://localhost:3000/user/');
-  const userUrl = new URL(userId, 'https://sportsee.onrender.com/user/');
+  // Comment / uncomment URL to switch between local or online API
+  // const userUrl = new URL(userId, 'http://localhost:3000/user/'); // local
+  const userUrl = new URL(userId, 'https://sportsee.onrender.com/user/'); // online (quite slow!)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Wait 0.5 seconds to simulate api calls
-        await sleep(500);
+        // await sleep(500);
 
         const userData = await fetchUserApi(userUrl);
         setData(userData);
