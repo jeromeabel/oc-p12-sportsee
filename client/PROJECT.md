@@ -1,5 +1,10 @@
 # PROJECT
 
+## Improvments
+- Decomposition : scalability, tests
+- + comments
+- Story : difficulties and actions to resolve them
+
 ## Context
 
 - I'm a web developper at the SportSee startup, we build a sport coaching app
