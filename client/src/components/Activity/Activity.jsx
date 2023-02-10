@@ -41,6 +41,7 @@ const Activity = ({ data }) => {
   /**
    * Render a customized tooltip for the Barchart
    *
+   * @param { Boolean } active The state of the tooltip
    * @param { Array } payload The source data of the content to be displayed in the legend
    */
   const CustomTooltip = ({ active, payload }) => {
@@ -57,7 +58,6 @@ const Activity = ({ data }) => {
   return (
     <section className={styles.chart}>
       <div className={styles.chart__title}>Activité quotidienne</div>
-
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} barSize={7} barGap={8}>
           <XAxis dataKey="day" tickLine={false} stroke="#9B9EAC" dy={7} />

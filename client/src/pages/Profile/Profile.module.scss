@@ -47,9 +47,6 @@
   display: flex;
   min-height: 610px;
   gap: 2em;
-  // flex: 1;
-  // height: 100%;
-  //justify-content: space-between;
 
   @include desktop {
     flex-direction: column-reverse;
@@ -70,6 +67,5 @@
     display: flex;
     min-height: 250px;
     gap: 2em;
-    // flex: 1;
   }
 }

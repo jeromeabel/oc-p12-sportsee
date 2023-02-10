@@ -6,7 +6,7 @@
 
 # oc-p12-sportsee 👋
 
-**SportSee** is the project n°12 of the [OpenClassrooms Front-End learning path](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react). It combines a backend and a client side. The backend is provided. It is a simple API which serve data to the client via GET endpoints.
+This project is the n°12 of the [OpenClassrooms Front-End learning path](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react). It combines a backend and a client side. The backend is provided. It is a simple API which serve data to the client via GET endpoints.
 
 **SportSee** is a virtual sport coaching company. I developped the profile page of their website. It is a dashboard where user's data (calories, kilograms, etc.) are displayed by different kinds of charts : line, bars, radial and radar. The profile get these data from the API or a mocked file.
 
@@ -74,18 +74,18 @@ const userUrl = new URL(userId, 'http://localhost:3000/user/'); // local
 // const userUrl = new URL(userId, 'https://sportsee.onrender.com/user/'); // online
 ```
 
-**Launch the server**
+Launch the server
 
 ```sh
 $ cd backend
 $ npm run start
 ```
 
-**Launch the client** as mentionned in the previous section.
+Launch the client as mentionned in the previous section.
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome! You can find the JS documentation in JSDOC format of the client in the "./client/docs/" folder.
+Consider this project as an exercice, but contributions, issues and feature requests are welcome! You can find the JS documentation in JSDOC format of the client in the "./client/docs/" folder.
 
 Feel free to check the [issues page](https://github.com/jeromeabel/oc-p12-sportsee/issues).
 

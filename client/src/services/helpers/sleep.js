@@ -1,6 +1,6 @@
 /**
  *
- * Wait a delay time
+ * Wait for a delay time
  *
  * @param { Integer } [ms=1000]  Delay time
  * @returns { Promise.resolve<function> } Promises resolved with setTimeout
