@@ -6,7 +6,7 @@
 
 # oc-p12-sportsee 👋
 
-This project is the n°12 of the [OpenClassrooms Front-End learning path](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react). It combines a backend and a client side. The backend is provided. It is a simple API which serve data to the client via GET endpoints.
+This project is the n°12 in the [OpenClassrooms Front-End learning path](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react). It combines a backend and a client side. The backend is provided. It is a simple API which serve data to the client via GET endpoints.
 
 **SportSee** is a virtual sport coaching company. I developped the profile page of their website. It is a dashboard where user's data (calories, kilograms, etc.) are displayed by different kinds of charts : line, bars, radial and radar. The profile get these data from the API or a mocked file.
 
