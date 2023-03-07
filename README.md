@@ -14,7 +14,7 @@ This project is the n°12 in the [OpenClassrooms Front-End learning path](https:
 
 - [Website](https://jeromeabel.github.io/oc-p12-sportsee/) : the online API is quite slow !
 
-![SportSee Profile Page](https://raw.githubusercontent.com/jeromeabel/oc-p12-sportsee/main/client/public/SportSee-ProfilePage.png)
+![SportSee Profile Page](screen.png)
 
 ## 🚨 Prerequisites
 
